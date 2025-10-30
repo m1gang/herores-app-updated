@@ -6,7 +6,7 @@ interface Props {
 }
 
 export const CustomPagination = ({ totalPages }: Props) => {
-    const page = 8;
+    const page = 8 as number;
     return (
         <div className="flex items-center justify-center space-x-2">
             <Button
