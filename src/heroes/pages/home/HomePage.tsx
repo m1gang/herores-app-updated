@@ -12,16 +12,15 @@ export const HomePage = () => {
 
     const [activeTab, setActiveTab] = useState<"all" | "favorites" | "heroes" | "villains">('all');
 
-    const { data } = useQuery({
+    const { data: heroesResponse } = useQuery({
         queryKey: ['heroes'],
         queryFn: () => getHeroesByPageAction(),
         staleTime: 1000 * 60 * 5,
     })
-    console.log({ data })
+
     // useEffect(() => {
     //     getHeroesByPage().then(resp => console.log(resp))
     // }, [])
-
 
     return (
         <>
@@ -35,8 +34,6 @@ export const HomePage = () => {
 
                 {/* Stats Dashboard */}
                 <HeroStats />
-
-
 
                 {/* Advanced Filters */}
 
@@ -66,7 +63,7 @@ export const HomePage = () => {
 
                     <TabsContent value="all">
                         {/* Mostrar todos los personajes */}
-                        <HeroGrid />
+                        <HeroGrid heroes={heroesResponse?.heroes ?? []} />
                     </TabsContent>
                     <TabsContent value="favorites">
                         {/* Mostrar todos los personajes favoritos */}
@@ -76,12 +73,8 @@ export const HomePage = () => {
                     </TabsContent>
                     <TabsContent value="villains">
                         {/* Mostrar todos los villanos */}
-                        <HeroGrid />
                     </TabsContent>
                 </Tabs>
-
-
-
 
 
                 {/* Pagination */}
