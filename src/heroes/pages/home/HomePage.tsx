@@ -1,6 +1,3 @@
-import {
-
-} from "lucide-react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { CustomJumbotron } from "@/components/custom/CustomJumbotron"
 import { HeroStats } from "@/heroes/components/HeroStats"
@@ -20,7 +17,7 @@ export const HomePage = () => {
         queryFn: () => getHeroesByPageAction(),
         staleTime: 1000 * 60 * 5,
     })
-
+    console.log({ data })
     // useEffect(() => {
     //     getHeroesByPage().then(resp => console.log(resp))
     // }, [])
