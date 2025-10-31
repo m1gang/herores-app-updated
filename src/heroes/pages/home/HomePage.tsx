@@ -7,7 +7,7 @@ import { HeroStats } from "@/heroes/components/HeroStats"
 import { HeroGrid } from "@/heroes/components/HeroGrid"
 import { useState } from "react"
 import { CustomPagination } from "@/components/custom/CustomPagination"
-import { CustomBreadCrumb } from "@/components/custom/CustomBreadCrumb"
+import { CustomBreadCrumbs } from "@/components/custom/CustomBreadcrumbs"
 
 export const HomePage = () => {
 
@@ -22,7 +22,7 @@ export const HomePage = () => {
                     title="Universo de SuperHéroes"
                     description="Descubre, explora y administras superhéroes y villanos"
                 />
-                <CustomBreadCrumb currentPage="Super Heroes" />
+                <CustomBreadCrumbs currentPage="Super Heroes" />
 
                 {/* Stats Dashboard */}
                 <HeroStats />
