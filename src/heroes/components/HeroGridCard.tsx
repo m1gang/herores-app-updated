@@ -48,7 +48,7 @@ export const HeroGridCard = ({ hero }: Props) => {
 
                 {/* Status indicator */}
                 <div className="absolute top-3 left-3 flex items-center gap-2">
-                    <div className={`w-3 h-3 rounded-full ${status === 'active' ? 'bg-green-500' : 'bg-red-500'}`} />
+                    <div className={`w-3 h-3 rounded-full ${status === 'Active' ? 'bg-green-500' : 'bg-red-500'}`} />
                     <Badge variant="secondary" className="text-xs bg-white/90 text-gray-700">
                         {status}
                     </Badge>
