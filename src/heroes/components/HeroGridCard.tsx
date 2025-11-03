@@ -55,7 +55,7 @@ export const HeroGridCard = ({ hero }: Props) => {
                 </div>
 
                 {/* Universe badge */}
-                <Badge className="absolute top-3 right-3 text-xs bg-blue-600 text-white">{universe}</Badge>
+                <Badge className={`absolute top-3 right-3 text-xs ${universe == 'Marvel' ? 'bg-red-600' : 'bg-blue-500'} text-white`}>{universe}</Badge>
 
                 {/* Favorite button */}
                 <Button size="sm" variant="ghost" className="absolute bottom-3 right-3 bg-white/90 hover:bg-white">
