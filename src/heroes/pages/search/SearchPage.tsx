@@ -12,10 +12,11 @@ const SearchPage = () => {
     const [searchParams] = useSearchParams();
 
     const name = searchParams.get('name') ?? undefined;
+    const strength = searchParams.get('strength') ?? undefined;
 
     const { data = [] } = useQuery({
-        queryKey: ['search', { name }],
-        queryFn: () => getSearchHeroesAction({ name }),
+        queryKey: ['search', { name, strength }],
+        queryFn: () => getSearchHeroesAction({ name, strength }),
         staleTime: 1000 * 60 * 5 //5 minutos
     })
 
@@ -31,8 +32,7 @@ const SearchPage = () => {
                 breadcrumbs={
                     [
                         { label: 'Home', to: '/' },
-                        { label: 'Home', to: '/' },
-                        { label: 'Home', to: '/' },
+
                     ]
                 }
             />
