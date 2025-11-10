@@ -8,8 +8,8 @@ describe('heroApi', () => {
 
         expect(heroApi).toBeDefined();
 
-        console.log(heroApi.defaults.baseURL);
-        expect(heroApi.defaults.baseURL).toBe(`${BASE_URL}/api/heroess`);
+
+        expect(heroApi.defaults.baseURL).toBe(`${BASE_URL}/api/heroes`);
         expect(BASE_URL).toContain('3001')
     })
 
