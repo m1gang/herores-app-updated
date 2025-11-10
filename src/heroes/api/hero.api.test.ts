@@ -1,0 +1,16 @@
+import { describe, expect, test } from "vitest";
+import { heroApi } from "./hero.api";
+
+const BASE_URL = import.meta.env.VITE_API_URL;
+
+describe('heroApi', () => {
+    test('should be configure pointing to the testing server', () => {
+
+        expect(heroApi).toBeDefined();
+
+        console.log(heroApi.defaults.baseURL);
+        expect(heroApi.defaults.baseURL).toBe(`${BASE_URL}/api/heroess`);
+        expect(BASE_URL).toContain('3001')
+    })
+
+})
